@@ -41,6 +41,16 @@ select:focus {
     outline: 0;
 }
 
+#music {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 1rem;
+    background-color: var(--red);
+    border-radius: 1rem;    
+    color: white;
+}
+
 /* START MENU */
 
 #start-menu {

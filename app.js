@@ -5,6 +5,7 @@ const finishMenu = document.getElementById('finish');
 
 // START UI DOM
 const startBtn = document.getElementById('start');
+const music = document.getElementById('music');
 let mode = document.getElementById('mode');
 
 // MAIN GAME ELEMENT & UI
@@ -28,11 +29,37 @@ let time;
 let p; //point variable
 let m; //missed variable
 
-window.addEventListener('load', function(){
-    theme.play();
+let played;
+
+music.addEventListener('click', function(){
+    
     theme.volume = 0.3;
     audioPoint.volume = 0.7;
+
+    if(played){
+        theme.pause();
+        music.innerText = "MUSIC: OFF";
+        music.style.backgroundColor = "var(--red)"
+    }else{
+        theme.play();
+        music.innerText = "MUSIC: ON";    
+        music.style.backgroundColor = "var(--green)"      
+    }
+
+    theme.addEventListener('play', function(){
+        played = true;
+        
+    });
+
+    theme.addEventListener('pause', function(){
+        played = false;
+    });
+
+
+
 });
+    
+
 
 mode.addEventListener('change', function(){
     if(mode.value == 1){
