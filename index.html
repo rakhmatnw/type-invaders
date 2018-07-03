@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Type Invasion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- START MENU -->
+    <section id="start-menu" >
+        <img src="assets/logo.png" alt="Logo">
+        <select name="mode" id="mode">
+            <option value="" disabled selected> SELECT MODE </option>
+            <option value="1">TIME</option>
+            <option value="2">SURVIVAL</option>
+        </select>
+        <button id="start">START</button>
+        
+    </section>
+
+    <!-- MAIN GAME -->
+
+    <section id="main" style="display: none">
+        <div id="main-1">
+        </div>
+        <div id="main-2">
+            <h1 id="timer"></h1>
+            <input type="text" name="input" id="inputTxt" placeholder="Type Here..." autofocus>
+            <h1 id="scr">Points: <span id="points">0</span> | Missed: <span id="missed">0</span></h1>
+        </div>
+    </section>
+    
+   <!-- FINISH MENU -->
+
+   <section id="finish" style="display: none">
+       <h2><span id="mode-title"></span> MODE</h2>
+       <h3><span id="score-detail"></span></h3>
+       <h3>Score</h3>
+       <h1><span id="final-score">100</span> </h1>
+       <div id="comment">GREAT!!</div>
+       <button id="again">PLAY AGAIN?</button>
+       <button id="exit">EXIT</button>
+   </section>
+
+
+   <audio src="assets/audio/theme.wav" id="theme" loop></audio>
+   <audio src="assets/audio/point.wav" id="audioPoint"></audio>
+   <audio src="assets/audio/missed.wav" id="audioMissed"></audio>
+   <audio src="assets/audio/error.wav" id="audioError"></audio>
+
+    <script src="app.js"></script>
+</body>
+</html>

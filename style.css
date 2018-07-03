@@ -1,0 +1,194 @@
+:root {
+    --ligther-dark : #596275;
+    --dark : #303952;
+    --green : #1dd1a1;
+    --dark-green : #10ac84;
+    --red : #ff6b6b;
+    --dark-red : #ee5253;
+    --yellow : #feca57;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-color: var(--dark);    
+}
+
+button {
+    padding: 1rem;
+    margin: 25px auto;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    border-bottom: 5px solid #eee;
+}
+
+button:active {
+    border-bottom: 0;
+    margin: 25px auto;
+    transform: translateY(4px);
+}
+
+input:focus,
+button:focus,
+select:focus {
+    outline: 0;
+}
+
+/* START MENU */
+
+#start-menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    width: 500px;
+}
+
+#start-menu img {
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+#start-menu button {
+    background-color: var(--green);
+    border-color: var(--dark-green);
+    display: block;
+    width: 80%;
+    color: white;
+}
+
+#start-menu #mode {
+    /* text-align-last: center; */
+    width: 80%;
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    background-color: var(--green);
+    color: white;
+    border-bottom: 5px solid var(--dark-green);
+}
+
+/* MAIN GAME */
+
+#main {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 10fr 1fr;
+}
+
+#main-1 {
+    position: relative;
+}
+
+#main-1 h1.type {
+    position: absolute;
+    color: var(--green);
+    font-weight: 500;
+}
+
+.type-point {
+    transition: all 0.5s ease;
+    opacity: 0;
+    transform: scale(1.5);
+}
+
+#main-2 {
+    background-color: var(--ligther-dark);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    color: var(--green);
+    padding: 1rem;
+}
+
+#main-2 h1 {
+    font-weight: 100;
+}
+
+#main-2 input {
+    padding: 1rem;
+    font-size: 1.5rem;
+    border: none;
+    border-bottom: 3px solid var(--green);
+    background: none;
+    color: var(--green);
+}
+
+#main-2 input:focus {
+    outline: none;
+}
+
+::placeholder {
+    color: var(--green);
+    opacity: 1;
+}
+
+#scr {
+    justify-self: right;
+}
+
+/* FINISH MENU */
+
+#finish {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: #8395a7;
+    color: white;
+    border-radius: 1rem;
+    width: 500px;
+    min-height: 500px;
+    padding: 2rem;
+}
+
+#finish h1,
+#finish h2,
+#finish h3 {
+    margin: 0;
+    padding: 0;
+}
+
+#finish h1 {
+    font-size: 6rem;
+}
+
+#finish h2 {
+    font-size: 3rem;
+}
+
+#finish h3 {
+    font-weight: 200;
+    font-size: 2.5rem;
+}
+
+#comment {
+    font-weight: 200;
+    font-size: 1.5rem;
+}
+
+#finish button {
+    background-color: var(--green);
+    border-color: var(--dark-green);
+    display: block;
+    width: 100%;
+    color: white;
+}
+
+#finish #exit {
+    background-color: var(--red);
+    border-color: var(--dark-red);
+}
+
+
