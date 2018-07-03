@@ -28,9 +28,11 @@ let time;
 let p; //point variable
 let m; //missed variable
 
-theme.play();
-theme.volume = 0.3;
-audioPoint.volume = 0.7;
+window.addEventListener('load', function(){
+    theme.play();
+    theme.volume = 0.3;
+    audioPoint.volume = 0.7;
+});
 
 mode.addEventListener('change', function(){
     if(mode.value == 1){
