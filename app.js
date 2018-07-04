@@ -31,6 +31,8 @@ let m; //missed variable
 
 let played;
 
+
+// PLAY & PAUSE MUSIC
 music.addEventListener('click', function(){
     
     theme.volume = 0.3;
@@ -55,12 +57,10 @@ music.addEventListener('click', function(){
         played = false;
     });
 
-
-
 });
     
 
-
+// CHOOSING GAME MODE
 mode.addEventListener('change', function(){
     if(mode.value == 1){
         speed = 200;
@@ -78,8 +78,10 @@ mode.addEventListener('change', function(){
         invator = 8;
         time = 1000 * 60;
     }
-})
+});
 
+
+// RESTART GAME IF PLAYER WANT TO PLAY AGAIN
 function resart(){
     txtArray=[];
     time = 1000 * 60;
@@ -92,8 +94,9 @@ function resart(){
     type.innerHTML = '';
 }
 
+// FETCH TEXT DATA
 function fetchIt(){
-    // FETCHING TEXT DATA
+
     fetch('https://baconipsum.com/api/?type=all-meat&sentences='+invator+'&format=text')
     .then(function(res){
         return res.text()
@@ -119,11 +122,14 @@ function fetchIt(){
     });
 };
 
+
+// GAMEPLAY STARTED
 function playIt(){
     
     p = 0;
     m = 0;
 
+    // TIMER
     if(mode.value == 1){
         console.log('MODE STANDARD');
 
@@ -170,7 +176,6 @@ function playIt(){
             if(left >= type.clientWidth) {
                 e.remove();
                 txtArray.shift();
-                // console.log(txtArray.length);
                 audioMissed.currentTime = 0;
                 audioMissed.play();
                 m += 1;
@@ -194,14 +199,14 @@ function playIt(){
         })  
     }, speed);
 
-
+    // NEW WAVE
     let newWave = setInterval(function(){
         fetchIt();
         console.log('NEW WAVE!');
     }, wave);
 
-        // IF ENTER KEY PRESSED
-    
+        
+    // IF ENTER KEY PRESSED
     input.addEventListener('keyup', function(e){
         e.preventDefault;
 
@@ -222,15 +227,13 @@ function playIt(){
                     p += 1;
                     pointsTxt.innerText = p;
                     input.value = '';
-                }          
-            });
-
-
-            
-        }
+                };       
+            });       
+        };
     });
 };
 
+// GAME OVER 
 function gameOver(){
 
     finishMenu.style.display = 'block'; 
