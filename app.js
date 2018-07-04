@@ -249,7 +249,8 @@ function gameOver(){
     exit.addEventListener('click', function(){
         finishMenu.style.display = 'none'; 
         main.style.display = 'none';
-        startMenu.style.display = 'block';      
+        startMenu.style.display = 'block';
+        music.style.display = 'block';      
         resart();  
     });
 
@@ -263,13 +264,15 @@ function gameOver(){
 
     if(mode.value == 1){
         modeTitle.innerText = 'STANDARD';
+        let fs = Math.floor((p/(p+m)) * 100);
+        scoreDetail.innerText = `Points : ${p} | Missed : ${m}`;
+        finalScore.innerText = fs;
     }else if(mode.value == 2){
-        modeTitle.innerText = 'SURVIVAL';    
+        modeTitle.innerText = 'SURVIVAL';   
+        finalScore.innerText = p;        
     }
 
-    let fs = Math.floor((p/(p+m)) * 100);
-    scoreDetail.innerText = `Points : ${p} | Missed : ${m}`;
-    finalScore.innerText = fs;
+    
     if(fs <= 30){
         comment.innerText = "You sucks! :p";
         
@@ -280,7 +283,6 @@ function gameOver(){
         comment.innerText = "Not bad..";
     }else{
         comment.innerText = "Well done! You're great!";
-
     }
 };
 
@@ -292,6 +294,7 @@ startBtn.addEventListener('click', function(){
         alert('choose mode!')
     }else{
         startMenu.style.display = 'none';
+        music.style.display = 'none';
         main.style.display = 'grid';
         fetchIt();
         playIt();
