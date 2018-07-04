@@ -90,6 +90,8 @@ function resart(){
     m = 0;
     pointsTxt.innerText = p;
     missedTxt.innerText = m;
+    input.disabled = false;
+    
     
     type.innerHTML = '';
 }
